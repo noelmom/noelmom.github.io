@@ -1,0 +1,311 @@
+/* ── RESET ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── TOKENS ─────────────────────────────────── */
+:root {
+  --bg:          #efefed;
+  --white:       #ffffff;
+  --black:       #0d0d0d;
+  --text:        #111111;
+  --muted:       #666666;
+  --border:      #d8d8d4;
+  --card-bg:     #ffffff;
+  --nav-bg:      #0d0d0d;
+  --nav-text:    #ffffff;
+  --radius-card: 12px;
+  --font-head:   'Inter Tight', sans-serif;
+  --font-body:   'Inter', sans-serif;
+  --ease:        cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ─────────────────────────────────── */
+.nav {
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  height: 58px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-logo {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: .95rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  letter-spacing: .02em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+.nav-link {
+  font-size: .875rem;
+  font-weight: 400;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  transition: color .18s;
+}
+.nav-link:hover { color: #fff; }
+.nav-link.active {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── HERO LAYOUT ─────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 58px);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 52px;
+  gap: 0;
+  align-items: stretch;
+}
+
+/* ── LEFT ─────────────────────────────────── */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 56px 72px 0;
+}
+
+.hero-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -.03em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 22px;
+  letter-spacing: .01em;
+}
+
+.hero-rule {
+  width: 44px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+.hero-bio {
+  font-size: .975rem;
+  line-height: 1.75;
+  color: var(--text);
+  font-weight: 400;
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+/* ── PROJECTS ─────────────────────────────── */
+.projects-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+/* 
+  PROJECTS LIST
+  Cards stack vertically. Add as many <a class="project-card"> blocks
+  as you like — they just extend the list naturally.
+*/
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+/* ── PROJECT CARD ─────────────────────────── */
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .2s var(--ease), transform .2s var(--ease), border-color .2s;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,.1);
+  transform: translateY(-2px);
+  border-color: #bbbbb7;
+}
+
+.project-card:hover .project-arrow {
+  transform: translateX(4px);
+  color: var(--text);
+}
+
+/* icon badge */
+.project-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--black);
+  color: #fff;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.icon-label {
+  font-family: var(--font-head);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.icon-version {
+  font-family: var(--font-body);
+  font-size: .6rem;
+  font-weight: 400;
+  opacity: .65;
+}
+
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.project-title {
+  font-family: var(--font-head);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+.project-arrow {
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: transform .2s var(--ease), color .2s;
+}
+
+/* github link */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .85rem;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(0,0,0,.3);
+  transition: text-decoration-color .18s;
+}
+.github-link:hover { text-decoration-color: var(--text); }
+
+/* ── RIGHT ─────────────────────────────────── */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* The cartoon already has the brushstroke baked in — just display it */
+.hero-cartoon {
+  display: block;
+  width: 100%;
+  max-width: 580px;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+.footer {
+  background: var(--nav-bg);
+  color: rgba(255,255,255,.45);
+  text-align: center;
+  padding: 18px 52px;
+  font-size: .8rem;
+  letter-spacing: .01em;
+}
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    min-height: unset;
+  }
+
+  .hero-right {
+    order: -1;
+    height: 340px;
+  }
+
+  .hero-cartoon {
+    height: 100%;
+    object-position: top center;
+  }
+
+  .hero-left {
+    padding: 40px 0 60px;
+  }
+
+  .projects-list {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav { padding: 0 20px; }
+  .footer { padding: 18px 20px; }
+
+  .hero-heading {
+    font-size: 2.6rem;
+  }
+}
