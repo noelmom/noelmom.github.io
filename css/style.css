@@ -129,6 +129,10 @@ em { font-style: normal; color: var(--accent); font-weight: 500; }
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
   color: var(--accent); background: rgba(91,84,232,0.10); padding: 4px 10px; border-radius: 999px;
 }
+.badge.shipped {
+  color: #05704f;
+  background: rgba(5,112,79,0.12);
+}
 .project-body p { color: var(--muted); margin-bottom: 16px; }
 .project-link { font-weight: 600; }
 .project-link.muted { color: var(--muted); }
