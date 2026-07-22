@@ -98,6 +98,7 @@ em { font-style: normal; color: var(--accent); font-weight: 500; }
 
 /* ── Projects ─────────────────────────────────── */
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.projects > .project:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: 100%; max-width: 520px; }
 .project {
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   overflow: hidden; box-shadow: var(--shadow-soft);
@@ -129,9 +130,39 @@ em { font-style: normal; color: var(--accent); font-weight: 500; }
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
   color: var(--accent); background: rgba(91,84,232,0.10); padding: 4px 10px; border-radius: 999px;
 }
+.badge-live { color: #0a7a3d; background: rgba(40, 200, 64, 0.14); }
 .project-body p { color: var(--muted); margin-bottom: 16px; }
 .project-link { font-weight: 600; }
 .project-link.muted { color: var(--muted); }
+
+/* ── Project card art (CSS-only) ─────────────────────── */
+.art-rebound { align-items: center; justify-content: center; padding: 44px 30px 30px; }
+.mock-list { width: 100%; max-width: 340px; display: grid; gap: 10px; }
+.mock-row {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px 16px; font-size: 0.88rem; box-shadow: var(--shadow-soft);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.mock-row em { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: #b3261e; background: rgba(179, 38, 30, 0.10); padding: 3px 9px; border-radius: 999px; }
+.mock-row.gone { opacity: 0.75; }
+.mock-row.gone span { text-decoration: line-through; color: var(--muted); }
+.mock-row.gone em { color: #0a7a3d; background: rgba(40, 200, 64, 0.14); }
+
+.art-roblox {
+  flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  padding: 30px;
+  background:
+    linear-gradient(rgba(245,245,251,0.82), rgba(236,236,246,0.82)),
+    repeating-linear-gradient(45deg, #e8e8f2 0 22px, #f1f1f8 22px 44px);
+}
+.art-emoji { font-size: 4rem; line-height: 1; filter: drop-shadow(0 14px 24px rgba(23,18,66,0.25)); }
+.art-caption {
+  font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); background: #fff; border: 1px dashed var(--line);
+  padding: 6px 14px; border-radius: 999px;
+}
 
 /* ── Career timeline ─────────────────────────────────── */
 .timeline { max-width: 720px; margin: 0 auto; position: relative; padding-left: 8px; }
