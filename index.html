@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noelmo Melo — Engineer, tinkerer, app builder</title>
-  <meta name="description" content="Noelmo Melo — software engineer working in identity &amp; Apple device management (Apple → Mosyle → Okta). Maker of EasyTunnel (iOS), Rebound (Chrome), and Vox Studio (Mac), with more on the stove." />
+  <meta name="description" content="Noelmo Melo — software engineer working in identity &amp; Apple device management (Apple → Mosyle → Okta). Maker of Screenproof (Mac), EasyTunnel (iOS), Rebound (Chrome), and Vox Studio (Mac), with more on the stove." />
   <meta name="google-site-verification" content="yAhz9UoLrr8-tEC-RQMDSfKdzd9XSgZdREVIUecGqW0" />
   <meta name="theme-color" content="#0B0B12" />
   <meta property="og:title" content="Noelmo Melo — Engineer, tinkerer, app builder" />
-  <meta property="og:description" content="Keeping identities secure by day. Shipping apps by night — EasyTunnel on the App Store, Rebound on the Chrome Web Store. Apple → Mosyle → Okta." />
+  <meta property="og:description" content="Keeping identities secure by day. Shipping apps by night — Screenproof and EasyTunnel on the App Store, Rebound on the Chrome Web Store. Apple → Mosyle → Okta." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260721-shipped" />
+  <link rel="stylesheet" href="css/style.css?v=20260819-shots" />
 </head>
 <body>
   <nav class="nav">
@@ -73,13 +73,8 @@
 
         <!-- Rebound -->
         <article class="project">
-          <div class="project-media window art-rebound">
-            <span class="dots"><i></i><i></i><i></i></span>
-            <div class="mock-list" aria-hidden="true">
-              <div class="mock-row"><span>ceo@big-deal.com</span><em>bounced</em></div>
-              <div class="mock-row"><span>totally-real@gnail.com</span><em>bounced</em></div>
-              <div class="mock-row gone"><span>ceo@big-deal.com</span><em>removed ✓</em></div>
-            </div>
+          <div class="project-media shot">
+            <img src="assets/rebound.jpg" alt="Rebound finding suppressed addresses in an Okta org" loading="lazy" />
           </div>
           <div class="project-body">
             <div class="project-top">
@@ -106,6 +101,24 @@
             <p>A private Mac voice studio for turning scripts into natural speech — shaped voices,
             tone controls, a local REST API, and rendering that runs <em>entirely on-device</em>.</p>
             <a class="project-link" href="https://github.com/noelmom/vox" target="_blank" rel="noopener">Grab it on GitHub →</a>
+          </div>
+        </article>
+
+        <!-- Screenproof -->
+        <article class="project">
+          <div class="project-media window">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <img src="assets/screenproof.png" alt="Screenproof editor with sensitive data automatically redacted" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Screenproof</h3>
+              <span class="badge badge-live">On the Mac App Store</span>
+            </div>
+            <p>Mac screenshots that don't leak. It spots emails, card numbers, SSNs and IPs and
+            redacts them <em>on-device</em> before the image ever leaves your Mac — plus annotation,
+            backdrops, watermarks, and MDM policy for fleets.</p>
+            <a class="project-link" href="https://screenproof.app" target="_blank" rel="noopener">Try it at screenproof.app →</a>
           </div>
         </article>
       </div>
